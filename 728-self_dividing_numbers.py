@@ -20,3 +20,21 @@ class Solution(object):
         :type right: int
         :rtype: List[int]
         """
+#另一种用布尔变量判断的方法，时间更短
+ for i in range(left , right+1):
+    flag = True
+    x = i
+    origin = x
+    while (x > 0) :
+        t = x % 10
+        if (t == 0):
+            flag = False
+            break
+        else:
+            if (origin % t !=0) :
+                flag = False
+                break
+        x = x / 10
+    if flag:
+        l.append(i)
+return l
