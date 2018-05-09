@@ -25,5 +25,6 @@ class Solution(object):
         :rtype: int
         """
         row = map(max, grid)
-        col = map(max, zip(*grid))
+        col = map(max, zip(*grid))#取每一列构成新的矩阵
+        #[(i, j) for i in row for j in col]是每一行列的最大值，用map(min,)构成新的矩阵，用sum求和，两个矩阵和相减
         return sum(map(min, [(i, j) for i in row for j in col])) - sum(map(sum, grid))
